@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Hobby 🎨</title>
+    <style>
+      body {
+        background: linear-gradient(
+          109.6deg,
+          rgb(177, 173, 219) 11.2%,
+          rgb(245, 226, 226) 91.1%
+        );
+      }
+
+      h1 {
+        text-align: center;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      h2 {
+        text-align: center;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      img {
+        max-width: 100%;
+      }
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      a {
+        text-decoration: none;
+        color: rgb(13, 2, 13);
+        transition: all 150ms ease-in-out;
+      }
+      a:hover {
+        color: rgb(45, 0, 109);
+      }
+      .order-painting {
+        display: block;
+        margin: 0 auto;
+        border-color: plum;
+        background: white;
+        font-size: 16px;
+        border-radius: 6px;
+        padding: 10px 15px;
+        transition: all 200ms ease-in-out;
+      }
+      .order-painting:hover {
+        background: plum;
+        cursor: pointer;
+      }
+      .content {
+        max-width: 600px;
+        margin: 20px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+      }
+      .theme-button {
+        display: block;
+        margin: 0 auto;
+        font-size: 14px;
+        background: rgb(19, 22, 46);
+        color: white;
+        padding: 8px 10px;
+        border-radius: 4px;
+        border: none;
+      }
+      .theme-button:hover {
+        color: black;
+        background: #a696c8;
+      }
+      footer {
+        text-align: center;
+        margin: 10px auto;
+        font-size: 18px;
+      }
+      .picture-heart {
+        border-radius: 10px;
+        transition: all 150ms ease-in-out;
+      }
+      .picture-heart:hover {
+        filter: contrast(70%);
+        transform: scale(1.1);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+      }
+      .grid img {
+        width: 100%;
+        border-radius: 8px;
+        transition: all 150ms ease-in-out;
+        margin: 8px auto;
+      }
+      .grid img:hover {
+        transform: scale(2);
+      }
+      .dark {
+        background: linear-gradient(
+          135.8deg,
+          rgb(26, 26, 29) 27.1%,
+          rgb(111, 34, 50) 77.5%
+        );
+        color: white;
+      }
+      .dark .content {
+        background: black;
+      }
+      .dark .theme-button {
+        background: black;
+        color: white;
+      }
+      .dark .theme-button:hover {
+        background: #dbc2cd;
+      }
+      .dark a {
+        color: rgb(189, 189, 189);
+      }
+      .dark a:hover {
+        color: #6e2231;
+      }
+      .dark .order-painting {
+        background: black;
+        color: white;
+        border-color: blanchedalmond;
+      }
+      .dark .order-painting:hover {
+        background: #6e2231;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="theme-button">Change Theme</button>
+    <div class="content">
+      <h1>Art</h1>
+      <h2>My Favorite Hobby</h2>
+
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/125/109/original/FullSizeRender_%282%29.jpeg?1714566441"
+        class="picture-heart"
+      />
+      <div class="grid">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/125/323/original/IMG_4687.JPG?1714676117"
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/125/325/original/IMG_4692.JPG?1714676152"
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/125/321/original/IMG_4686.JPG?1714676044"
+        />
+
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/125/327/original/IMG_4690.JPG?1714676179"
+        />
+      </div>
+      <p>
+        My favorite hobby is to create artistic pictures using different
+        techniques and style. I create art mostly on canvas using acrylic paint.
+        I like as well to create digital illustrations using an iPad with
+        various themes starting with fictional characters and fashion sketches.
+        My favorite artists are Salvador Dali, Andy Warhol, Frida Kahlo and
+        Sandro Botticelli. <br /><br />
+        🦹‍♀️
+        <a href="https://beaodilija.wixsite.com/design" target="_blank">
+          <strong>Check my design portfolio</strong>
+        </a>
+      </p>
+
+      <button class="order-painting">Order a Painting</button>
+    </div>
+    <footer>Coded by Bea Jacevic</footer>
+    <script>
+      function order() {
+        let art = prompt("Which painting would you like to order?");
+        let name = prompt("What is your name?");
+        let email = prompt("What is your email?");
+
+        alert(
+          "Thanks " +
+            name +
+            "! Reservation is successful 🖼️ You will receive an email regarding the next steps. Take care!"
+        );
+      }
+      let button = document.querySelector(".order-painting");
+      button.addEventListener("click", order);
+
+      function changeTheme() {
+        let body = document.querySelector("body");
+
+        // body.classList.toggle("dark");
+
+        if (body.classList.contains("dark")) {
+          body.classList.remove("dark");
+        } else {
+          body.classList.add("dark");
+        }
+      }
+
+      let themeButton = document.querySelector(".theme-button");
+      themeButton.addEventListener("click", changeTheme);
+    </script>
+  </body>
+</html>
